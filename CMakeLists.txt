@@ -39,6 +39,8 @@ add_library(boost INTERFACE)
 target_link_libraries(boost INTERFACE ${Boost_LIBRARIES})
 target_include_directories(boost INTERFACE SYSTEM ${Boost_INCLUDE_DIR})
 
+set(OPENSSL_VER "1.0.2n")
+set(OPENSSL_ROOT_DIR "/usr/local/Cellar/openssl/${OPENSSL_VER}/")
 find_package(OpenSSL REQUIRED)
 add_library(openssl INTERFACE)
 target_link_libraries(openssl INTERFACE ${OPENSSL_LIBRARIES})

@@ -31,6 +31,7 @@ namespace blocksci {
         createDirectory(chainDirectory());
         
         boost::property_tree::ptree root;
+        /*
         auto configFile = dataDirectory/"config.ini";
         if (boost::filesystem::exists(configFile)) {
             boost::filesystem::ifstream configStream{configFile};
@@ -44,7 +45,7 @@ namespace blocksci {
             ss << "Error, data directory does not contain config.ini. Are you sure " << dataDirectory << " was the output directory of blocksci_parser?";
             throw std::runtime_error(ss.str());
         }
-        
+        */
         auto dataDirectoryString = dataDirectory.native();
         if(dataDirectoryString.find("dash") != std::string::npos) {
             pubkeyPrefix = {76};
@@ -63,8 +64,8 @@ namespace blocksci {
             scriptPrefix = {13};
             segwitPrefix = "nc";
         } else {
-            pubkeyPrefix = std::vector<unsigned char>(1,0);
-            scriptPrefix = std::vector<unsigned char>(1,5);
+            pubkeyPrefix = std::vector<unsigned char>(1,50);
+            scriptPrefix = std::vector<unsigned char>(1,9);
             segwitPrefix = "bc";
         }
     }

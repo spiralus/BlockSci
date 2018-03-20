@@ -50,7 +50,7 @@ ParserConfiguration<FileTag>::ParserConfiguration(const boost::filesystem::path 
         blockMagic = 0x0709110b;
         workHashFunction = doubleSha256;
     } else {
-        blockMagic = 0xd9b4bef9;
+        blockMagic = 0xdf03b5f8;
         workHashFunction = doubleSha256;
     }
 }
